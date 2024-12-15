@@ -1,0 +1,94 @@
+# This project was generated with 0.3.19 using template: https://github.com/beeware/briefcase-template@v0.3.19
+[tool.briefcase]
+project_name = "poema"
+bundle = "verso.com"
+version = "0.0.1"
+url = "https://verso.com"
+license.file = "LICENSE"
+author = "Julia Pimenta"
+author_email = "emanoele2002@icloud.com"
+
+[tool.briefcase.app.projeto]
+formal_name = "poema"
+description = "Application for writing verses and poems"
+long_description = """More details about the app should go here.
+"""
+sources = [
+    "src/projeto",
+]
+test_sources = [
+    "tests",
+]
+
+console_app = true
+requires = [
+]
+test_requires = [
+    "pytest",
+]
+
+[tool.briefcase.app.projeto.macOS]
+universal_build = true
+requires = [
+]
+
+[tool.briefcase.app.projeto.linux]
+requires = [
+]
+
+[tool.briefcase.app.projeto.linux.system.debian]
+system_requires = [
+    # Add any system packages needed at build the app here
+]
+
+system_runtime_requires = [
+    # Add any system packages needed at runtime here
+]
+
+[tool.briefcase.app.projeto.linux.system.rhel]
+system_requires = [
+    # Add any system packages needed at build the app here
+]
+
+system_runtime_requires = [
+    # Add any system packages needed at runtime here
+]
+
+[tool.briefcase.app.projeto.linux.system.suse]
+system_requires = [
+    # Add any system packages needed at build the app here
+]
+
+system_runtime_requires = [
+    # Add any system packages needed at runtime here
+]
+
+[tool.briefcase.app.projeto.linux.system.arch]
+system_requires = [
+    # Add any system packages needed at build the app here
+]
+
+system_runtime_requires = [
+    # Add any system packages needed at runtime here
+]
+
+[tool.briefcase.app.projeto.linux.flatpak]
+flatpak_runtime = "org.freedesktop.Platform"
+flatpak_runtime_version = "23.08"
+flatpak_sdk = "org.freedesktop.Sdk"
+
+[tool.briefcase.app.projeto.windows]
+requires = [
+]
+
+# Mobile deployments
+[tool.briefcase.app.projeto.iOS]
+supported = false
+
+[tool.briefcase.app.projeto.android]
+supported = false
+
+# Web deployments
+[tool.briefcase.app.projeto.web]
+supported = false
+
