@@ -6,10 +6,10 @@ from spellchecker import SpellChecker  # Biblioteca para correção ortográfica
 
 class PoemaApp(toga.App):
     def startup(self):
-        # Janela principal
+        #janela principal
         self.main_window = toga.MainWindow(title=self.name)
 
-        # Lista salva dos poemas
+        #lista salva dos poemas
         self.poemas = []
         self.poemas_list = toga.Selection(items=self.poemas, on_select=self.on_poemas_select)
 
@@ -40,7 +40,6 @@ class PoemaApp(toga.App):
         # Botão de cancelar
         cancel_button = toga.Button('Cancelar', on_press=lambda x: edit_window.close(), style=Pack(padding=10))
 
-        # Dois botões na mesma janela
         edit_box = toga.Box(children=[title_input, dialog, correct_button, save_button, cancel_button],
                             style=Pack(direction=COLUMN, padding=10, alignment='center'))
 
@@ -49,7 +48,7 @@ class PoemaApp(toga.App):
 
     def correct_text(self, dialog):
         # Corrige o texto do poema
-        spell = SpellChecker(language='pt')  # Define o idioma para português
+        spell = SpellChecker(language='pt') #verifica a linguagem
         words = dialog.value.split()
         corrected_words = [spell.correction(word) if word in spell else word for word in words]
         corrected_text = ' '.join(corrected_words)
@@ -62,9 +61,9 @@ class PoemaApp(toga.App):
             self.main_window.info_dialog("ATENÇÃO", "O título e o poema não podem ser vazios!")
             return
 
-        # Atualiza a lista com o novo poema
+        # Atualiza a lista com o novo poema mostrando apenas os titulos
         self.poemas.append(f"{title}: {text}")
-        self.poemas_list.items = [poema.split(': ')[0] for poema in self.poemas]  # Mostra apenas os títulos
+        self.poemas_list.items = [poema.split(': ')[0] for poema in self.poemas] 
 
         edit_window.close()
         self.return_to_main()
